@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import React from 'react';
+import ListArticles from '../../components/articles/ListArticles';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
 function Articles() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Articles</Text>
+      <ListArticles />
     </SafeAreaView>
   );
 }

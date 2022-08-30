@@ -86,10 +86,19 @@ function OneBet({ item }: OneTaskProps): JSX.Element {
             <Text style={[tw`ml-2`, styles.text]}>{item.name}</Text>
           </View>
         </View>
-        <View style={tw`flex-row flex justify-between`}>
-          <Text style={styles.text}>
+        <View style={tw`flex-row flex`}>
+          <Text style={[tw`font-bold`, styles.text]}>{item.category}</Text>
+          <Text style={[tw`ml-2`, styles.text]}>
             le {dateFormat(new Date(item.date), 'dd/mm/yy')}
           </Text>
+        </View>
+        <View style={tw`flex-row flex mt-2 items-center`}>
+          <View style={tw`bg-gray-500 p-1 rounded-full`}>
+            <Text style={[tw`font-bold`, styles.text]}>{item.stake}/10</Text>
+          </View>
+          <View style={tw`bg-yellow-600 p-1 rounded-full ml-2`}>
+            <Text style={[tw`font-bold`, styles.text]}>{item.bookmaker}</Text>
+          </View>
         </View>
       </TouchableOpacity>
     </View>

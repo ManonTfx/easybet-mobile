@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import React from 'react';
+import ListBets from '../../components/bets/ListBets';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
 function BetsScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>bets</Text>
+      <ListBets />
     </SafeAreaView>
   );
 }
