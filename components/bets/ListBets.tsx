@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View, Text } from 'react-native';
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import Error from '../Error';
@@ -13,13 +13,12 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     width: '100%',
     paddingHorizontal: 8,
-    borderTopWidth: 1,
-    borderTopColor: '#8790E0',
   },
   text: {
     color: '#8790E0',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 30,
+    marginTop: 10,
   },
 });
 
@@ -47,6 +46,7 @@ export default function ListBets() {
     );
   return (
     <View style={styles.container}>
+      <Text style={[styles.text]}>Paris en cours</Text>
       <FlatList
         data={[...data.getAllBets]}
         keyExtractor={(bet) => bet.id}

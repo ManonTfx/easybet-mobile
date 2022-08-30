@@ -5,6 +5,9 @@ import { Text, StyleSheet, View } from 'react-native';
 import tw from 'tailwind-react-native-classnames';
 import { GET_USER_BY_ID } from '../../API/queries/user';
 import { GetUserById } from '../../API/types/GetUserById';
+import ProfilPicture from '../../components/userSettings/ProfilPicture';
+import SettingsHeader from '../../components/userSettings/SettingsHeader';
+import UpdateInfosUser from '../../components/userSettings/UpdateInfosUser';
 
 const styles = StyleSheet.create({
   container: {
@@ -40,7 +43,9 @@ function Settings() {
 
   return (
     <View style={[styles.container, tw`w-full`]}>
+      <SettingsHeader />
       <View style={tw`w-full flex flex-row items-center mt-2`}>
+        <ProfilPicture user={user} />
         <View style={tw`flex flex-col ml-2`}>
           <View style={tw`text-white flex flex-row mt-5`}>
             <Text style={tw`text-white font-bold text-xl mr-1`}>
@@ -57,6 +62,7 @@ function Settings() {
           </Text>
         </View>
       </View>
+      <UpdateInfosUser userId={id} />
     </View>
   );
 }
